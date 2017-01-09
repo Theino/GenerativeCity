@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GenerativeCity.City">
+    <Position X="4.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>City.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GenerativeCity.CityStructure">
+    <Position X="2.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAACAIAABABBAAAAAAAAAAIAAAAEAAAAE=</HashCode>
+      <FileName>CityStructure.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GenerativeCity.CommercialBuilding">
+    <Position X="1" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAEAAAAE=</HashCode>
+      <FileName>CommercialBuilding.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GenerativeCity.House">
+    <Position X="3" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAEAAAAE=</HashCode>
+      <FileName>House.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GenerativeCity.Empty">
+    <Position X="4.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAEAAAAE=</HashCode>
+      <FileName>Empty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GenerativeCity.CityMap">
+    <Position X="6.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQBIAAAAAAAAAgCAAAAAAAAAAAAAEIAAAABAAAAAA=</HashCode>
+      <FileName>CityMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GenerativeCity.Point">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>Point.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
