@@ -13,30 +13,39 @@ namespace GenerativeCity
 
         public double RandomChancePromotion { get; set; }
         public double RandomChanceDemotion { get; set; }
+        public double PromotionMultiplierOnUpgradeType { get; set; }
 
         public abstract double DefaultRandomChancePromotion { get; }
         public abstract double DefaultRandomChanceDemotion { get; }
+        public abstract double DefaultPromotionMultiplierOnUpgradeType { get; }
 
         public abstract Type promotionType { get; }
         public abstract Type demotionType { get; }
 
 
 
-        public CityStructure(int xIndex, int yIndex, double randomChancePromotion, double randomChanceDemotion)
+        public CityStructure(int xIndex, int yIndex, double randomChancePromotion, double randomChanceDemotion, double promotionMultiplierOnUpgradeType)
         {
             XIndex = xIndex;
             YIndex = yIndex;
             RandomChancePromotion = randomChancePromotion;
             RandomChanceDemotion = randomChanceDemotion;
+            PromotionMultiplierOnUpgradeType = promotionMultiplierOnUpgradeType;
+        }
+
+        public CityStructure(int xIndex, int yIndex)
+        {
+            XIndex = xIndex;
+            YIndex = yIndex;
         }
 
         public void Step(CityMap cityMap)
         {
-            object[] parameters = { XIndex, YIndex, DefaultRandomChancePromotion, DefaultRandomChanceDemotion };
+            object[] parameters = { XIndex, YIndex };
 
             int randVal = cityMap.rand.Next();
-            double randomChanceWithHouses = cityMap.CountPercentTypeAround(XIndex, YIndex, 1, promotionType);
-            double randomOddsOfPromotion = randomChanceWithHouses + RandomChancePromotion;
+            double randomChanceWithHouses = cityMap.CountPercentTypeAround(XIndex, YIndex, 3, promotionType);
+            double randomOddsOfPromotion = (randomChanceWithHouses * PromotionMultiplierOnUpgradeType) + RandomChancePromotion;
             if (randVal < Int32.MaxValue * randomOddsOfPromotion)
             {
                 CityStructure newStructure = (CityStructure)Activator.CreateInstance(promotionType, parameters);

@@ -12,7 +12,7 @@ namespace GenerativeCity
         {
             get
             {
-                return 0.8;
+                return 0.1;
             }
         }
         public override double DefaultRandomChanceDemotion
@@ -20,6 +20,14 @@ namespace GenerativeCity
             get
             {
                 return 0.1;
+            }
+        }
+
+        public override double DefaultPromotionMultiplierOnUpgradeType
+        {
+            get
+            {
+                return 0.2;
             }
         }
 
@@ -39,9 +47,15 @@ namespace GenerativeCity
             }
         }
 
-        public Empty(int xIndex, int yIndex, double randomChancePromotion, double randomChanceDemotion) : base(xIndex, yIndex, randomChancePromotion, randomChanceDemotion)
+        public Empty(int xIndex, int yIndex, double randomChancePromotion, double randomChanceDemotion, double promotionMultiplierOnUpgradeType) : base(xIndex, yIndex, randomChancePromotion, randomChanceDemotion, promotionMultiplierOnUpgradeType)
         {
         }
 
+        public Empty(int xIndex, int yIndex) : base(xIndex, yIndex)
+        {
+            RandomChancePromotion = DefaultRandomChancePromotion;
+            RandomChanceDemotion = DefaultRandomChanceDemotion;
+            PromotionMultiplierOnUpgradeType = DefaultPromotionMultiplierOnUpgradeType;
+        }
     }
 }

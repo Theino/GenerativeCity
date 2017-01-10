@@ -8,13 +8,11 @@ namespace GenerativeCity
 {
     class City
     {
-        public const double initialPromotionChance = 0.1;
-        public const double initialDemotionChance = 0;
         public CityMap cityMap;
 
         public City(int xSize, int ySize)
         {
-            cityMap = new CityMap(xSize, ySize, initialPromotionChance, initialDemotionChance);
+            cityMap = new CityMap(xSize, ySize);
         }
 
         public void Step()

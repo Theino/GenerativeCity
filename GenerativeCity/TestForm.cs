@@ -13,8 +13,8 @@ namespace GenerativeCity
     public partial class formTest : Form
     {
         Graphics graphics;
-        int widthOfStruct = 10;
-        int heightOfStruct = 10;
+        int widthOfStruct = 1;
+        int heightOfStruct = 1;
         int widthOfCity = 512;
         int heightOfCity = 512;
         City city;

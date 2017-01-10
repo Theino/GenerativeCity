@@ -32,7 +32,7 @@ namespace GenerativeCity
         }
 
 
-        public CityMap(int xSize, int ySize, double initialPromotionChance, double initialDemotionChance)
+        public CityMap(int xSize, int ySize)
         {
             XSize = xSize;
             YSize = ySize;
@@ -41,7 +41,7 @@ namespace GenerativeCity
             {
                 for(int j = 0; j < ySize; j++)
                 {
-                    cityMap[i, j] = new Empty(i, j, initialPromotionChance, initialDemotionChance);
+                    cityMap[i, j] = new Empty(i, j);
                 }
             }
         }
