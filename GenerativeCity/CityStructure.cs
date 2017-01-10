@@ -53,17 +53,23 @@ namespace GenerativeCity
             int yMiddle = cityMap.YSize / 2;
             int randVal = cityMap.rand.Next();
             double randomChanceWithSurrounding = cityMap.CountPercentTypeAround(XIndex, YIndex, 3, promotionType);
-            double centerBiasX = Math.Abs(XIndex - xMiddle);
-            double centerBiasY = Math.Abs(YIndex - yMiddle);
-            double percentOffCenter = (centerBiasX + centerBiasY) / (xMiddle + yMiddle);
-            double percentOnCenterExp = Math.Pow(1 - percentOffCenter, 4);
+            double percentCenterBias = calculateCenterBias(xMiddle, yMiddle);
             double randomOddsOfPromotion = (randomChanceWithSurrounding * PromotionMultiplierOnUpgradeType) + RandomChancePromotion;
-            randomOddsOfPromotion = randomOddsOfPromotion * percentOnCenterExp;
+            randomOddsOfPromotion = randomOddsOfPromotion * percentCenterBias;
             if (randVal < Int32.MaxValue * randomOddsOfPromotion)
             {
                 CityStructure newStructure = (CityStructure)Activator.CreateInstance(promotionType, parameters);
                 cityMap[XIndex, YIndex] = newStructure;
             }
+        }
+
+        private double calculateCenterBias(int xMiddle, int yMiddle)
+        {
+            double centerBiasX = Math.Abs(XIndex - xMiddle);
+            double centerBiasY = Math.Abs(YIndex - yMiddle);
+            double percentOffCenter = (centerBiasX + centerBiasY) / (xMiddle + yMiddle);
+            double percentOnCenterExp = Math.Pow(1 - percentOffCenter, 4);
+            return percentOnCenterExp;
         }
     }
 }
