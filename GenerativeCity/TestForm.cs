@@ -13,10 +13,10 @@ namespace GenerativeCity
     public partial class formTest : Form
     {
         Graphics graphics;
-        int widthOfStruct = 1;
-        int heightOfStruct = 1;
-        int widthOfCity = 512;
-        int heightOfCity = 512;
+        int widthOfStruct = 2;
+        int heightOfStruct = 2;
+        int widthOfCity = 128;
+        int heightOfCity = 128;
         City city;
         string initialFormTitle;
 

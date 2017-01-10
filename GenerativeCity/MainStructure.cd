@@ -7,31 +7,24 @@
       <FileName>City.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GenerativeCity.CityStructure">
-    <Position X="2.75" Y="1.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AACAAAAAAAAAACAIAABABBAAAAAAAAAAIAAAAEAAAAE=</HashCode>
-      <FileName>CityStructure.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="GenerativeCity.CommercialBuilding">
     <Position X="1" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAEAAAAE=</HashCode>
+      <HashCode>AACAAAAAAAAAAAEAAAFAAAAAAAAAAAAAAAAAAEAAAAE=</HashCode>
       <FileName>CommercialBuilding.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GenerativeCity.House">
-    <Position X="3" Y="4.75" Width="1.5" />
+    <Position X="2.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAEAAAAE=</HashCode>
+      <HashCode>AACAAAAAAAAAAAEAAAFAAAAAAAAAAAAAAAAAAEAAAAE=</HashCode>
       <FileName>House.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GenerativeCity.Empty">
-    <Position X="4.75" Y="4.75" Width="1.5" />
+    <Position X="4.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAEAAAAE=</HashCode>
+      <HashCode>AACAAAAAAAAAAAEAAAFAAAAAAAAAAAAAAAAAAEAAAAE=</HashCode>
       <FileName>Empty.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -47,6 +40,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
       <FileName>Point.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GenerativeCity.CityStructure">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAACEIAAFAhBAAAAAAAAAAIAAACEAAAAE=</HashCode>
+      <FileName>CityStructure.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

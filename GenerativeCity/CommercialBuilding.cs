@@ -46,7 +46,16 @@ namespace GenerativeCity
                 return typeof(House);
             }
         }
-        public CommercialBuilding(int xIndex, int yIndex, double randomChancePromotion, double randomChanceDemotion, double promotionMultiplierOnUpgradeType) : base(xIndex, yIndex, randomChancePromotion, randomChanceDemotion, promotionMultiplierOnUpgradeType)
+
+        public override double DefaultCenterBias
+        {
+            get
+            {
+                return 0.1;
+            }
+        }
+
+        public CommercialBuilding(int xIndex, int yIndex, double randomChancePromotion, double randomChanceDemotion, double promotionMultiplierOnUpgradeType, double centerBias) : base(xIndex, yIndex, randomChancePromotion, randomChanceDemotion, promotionMultiplierOnUpgradeType, centerBias)
         {
         }
         public CommercialBuilding(int xIndex, int yIndex) : base(xIndex, yIndex)
