@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace GenerativeCity
 {
-    public partial class Form1 : Form
+    public partial class TestForm : Form
     {
         Graphics graphics;
         int widthOfStruct = 10;
@@ -18,7 +18,7 @@ namespace GenerativeCity
         int widthOfCity = 512;
         int heightOfCity = 512;
         City city;
-        public Form1()
+        public TestForm()
         {
             InitializeComponent();
             graphics = panel1.CreateGraphics();

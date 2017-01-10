@@ -19,7 +19,7 @@ namespace GenerativeCity
         {
             foreach(CityStructure structure in cityMap.getCityStructureArr())
             {
-                structure.Step(cityMap); //testing github
+                structure.Step(cityMap);
             }
         }
     }

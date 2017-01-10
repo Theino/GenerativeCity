@@ -1,6 +1,6 @@
 ﻿namespace GenerativeCity
 {
-    partial class Form1
+    partial class TestForm
     {
         /// <summary>
         /// Required designer variable.
@@ -36,9 +36,10 @@
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(268, 449);
+            this.btnGenerate.Location = new System.Drawing.Point(201, 365);
+            this.btnGenerate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(108, 26);
+            this.btnGenerate.Size = new System.Drawing.Size(81, 21);
             this.btnGenerate.TabIndex = 0;
             this.btnGenerate.Text = "Generate";
             this.btnGenerate.UseVisualStyleBackColor = true;
@@ -54,19 +55,21 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(628, 404);
+            this.panel1.Size = new System.Drawing.Size(471, 328);
             this.panel1.TabIndex = 1;
             // 
-            // Form1
+            // TestForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 487);
+            this.ClientSize = new System.Drawing.Size(471, 396);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnGenerate);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "TestForm";
+            this.Text = "Generative City Test";
             this.ResumeLayout(false);
 
         }
