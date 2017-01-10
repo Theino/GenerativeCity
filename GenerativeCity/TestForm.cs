@@ -18,11 +18,17 @@ namespace GenerativeCity
         int widthOfCity = 512;
         int heightOfCity = 512;
         City city;
+        string initialFormTitle;
+
+        int timerCount = 0;
+        
+
         public formTest()
         {
             InitializeComponent();
             graphics = panelDrawing.CreateGraphics();
             city = new City(widthOfCity, heightOfCity);
+            initialFormTitle = this.Text;
         }
 
         private void btnGenerate_Click(object sender, EventArgs e)
@@ -31,8 +37,11 @@ namespace GenerativeCity
         }
 
         private void timer1_Tick(object sender, EventArgs e)
-        { 
+        {
+            city.Step();
             drawMap(city.cityMap);
+            timerCount++;
+            this.Text = initialFormTitle + " " + timerCount.ToString();
         }
 
         private void drawMap(CityMap cityMap)
