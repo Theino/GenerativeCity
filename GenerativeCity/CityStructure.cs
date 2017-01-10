@@ -24,6 +24,7 @@ namespace GenerativeCity
         public abstract Type promotionType { get; }
         public abstract Type demotionType { get; }
 
+        public abstract void Step(CityMap cityMap);
 
 
         public CityStructure(int xIndex, int yIndex, double randomChancePromotion, double randomChanceDemotion, double promotionMultiplierOnUpgradeType, double centerBias)
@@ -46,35 +47,7 @@ namespace GenerativeCity
             CenterBias = DefaultCenterBias;
         }
 
-        public void Step(CityMap cityMap)
-        {
-            object[] parameters = { XIndex, YIndex };
-            int xMiddle = cityMap.XSize / 2;
-            int yMiddle = cityMap.YSize / 2;
-            int randVal = cityMap.rand.Next();
-            double randomChanceWithHouse = cityMap.CountPercentTypeAround(XIndex, YIndex, 3, typeof(House));
-            double randomChanceWithCommercialBuilding = cityMap.CountPercentTypeAround(XIndex, YIndex, 3, typeof(CommercialBuilding));
-            double randomChanceWithSurroundingBias;
-            if (this.GetType() == typeof(Empty))
-            {
-                randomChanceWithSurroundingBias = 2 * (randomChanceWithHouse + randomChanceWithCommercialBuilding);
-            }
-            else
-            {
-                randomChanceWithSurroundingBias = 2 * randomChanceWithCommercialBuilding;
-            }
-
-            double percentCenterBias = calculateCenterBias(xMiddle, yMiddle);
-            double randomOddsOfPromotion = (randomChanceWithSurroundingBias * PromotionMultiplierOnUpgradeType) + RandomChancePromotion;
-            randomOddsOfPromotion = randomOddsOfPromotion * percentCenterBias;
-            if (randVal < Int32.MaxValue * randomOddsOfPromotion)
-            {
-                CityStructure newStructure = (CityStructure)Activator.CreateInstance(promotionType, parameters);
-                cityMap[XIndex, YIndex] = newStructure;
-            }
-        }
-
-        private double calculateCenterBias(int xMiddle, int yMiddle)
+        public double calculateCenterBias(int xMiddle, int yMiddle)
         {
             double centerBiasX = Math.Abs(XIndex - xMiddle);
             double centerBiasY = Math.Abs(YIndex - yMiddle);
