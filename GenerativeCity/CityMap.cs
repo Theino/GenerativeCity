@@ -32,11 +32,18 @@ namespace GenerativeCity
         }
 
 
-        public CityMap(int xSize, int ySize)
+        public CityMap(int xSize, int ySize, double initialPromotionChance, double initialDemotionChance)
         {
             XSize = xSize;
             YSize = ySize;
-            cityMap = new Empty[xSize, ySize];
+            cityMap = new CityStructure[xSize, ySize];
+            for (int i = 0; i < xSize; i++)
+            {
+                for(int j = 0; j < ySize; j++)
+                {
+                    cityMap[i, j] = new Empty(i, j, initialPromotionChance, initialDemotionChance);
+                }
+            }
         }
 
         public double CountPercentTypeAround(int xIndex, int yIndex, int distance, Type t)
