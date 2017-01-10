@@ -58,7 +58,7 @@ namespace GenerativeCity
                     bool isNotOrigin = i != xIndex || j != yIndex;
                     if (isNotOrigin)
                     {
-                        if (IsSameType(xIndex, yIndex, t))
+                        if (IsSameType(i, j, t))
                         {
                             count++;
                         }
@@ -74,9 +74,15 @@ namespace GenerativeCity
         {
             try
             {
-                if (cityMap[xIndex, yIndex].GetType() == t)
+                if (xIndex < XSize && yIndex < YSize)
                 {
-                    return true;
+                    if (xIndex >= 0 && yIndex >= 0)
+                    {
+                        if (cityMap[xIndex, yIndex].GetType() == t)
+                        {
+                            return true;
+                        }
+                    }
                 }
             }
             catch

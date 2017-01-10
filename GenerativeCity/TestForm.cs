@@ -13,15 +13,19 @@ namespace GenerativeCity
     public partial class formTest : Form
     {
         Graphics graphics;
-        int widthOfStruct = 2;
-        int heightOfStruct = 2;
+        int widthOfStruct = 5;
+        int heightOfStruct = 5;
         int widthOfCity = 128;
         int heightOfCity = 128;
         City city;
         string initialFormTitle;
 
         int timerCount = 0;
-        
+        SolidBrush purpleBrush = new SolidBrush(Color.Purple);
+        SolidBrush brownBrush = new SolidBrush(Color.Brown);
+        SolidBrush greenBrush = new SolidBrush(Color.Green);
+
+
 
         public formTest()
         {
@@ -46,22 +50,23 @@ namespace GenerativeCity
 
         private void drawMap(CityMap cityMap)
         {
+            CityStructure structureType;
             for (int i = 0; i < cityMap.XSize; i++)
             {
                 for (int j = 0; j < cityMap.YSize; j++)
                 {
-                    CityStructure structureType = cityMap[i, j];
+                    structureType = cityMap[i, j];
                     if (structureType.GetType() == typeof(Empty))
                     {
-                        graphics.FillRectangle(new SolidBrush(Color.Green), i*widthOfStruct, j*heightOfStruct, widthOfStruct, heightOfStruct);
+                        graphics.FillRectangle(greenBrush, i*widthOfStruct, j*heightOfStruct, widthOfStruct, heightOfStruct);
                     }
                     if (structureType.GetType() == typeof(House))
                     {
-                        graphics.FillRectangle(new SolidBrush(Color.Brown), i*widthOfStruct, j*heightOfStruct, widthOfStruct, heightOfStruct);
+                        graphics.FillRectangle(brownBrush, i*widthOfStruct, j*heightOfStruct, widthOfStruct, heightOfStruct);
                     }
                     if (structureType.GetType() == typeof(CommercialBuilding))
                     {
-                        graphics.FillRectangle(new SolidBrush(Color.Purple), i*widthOfStruct, j*heightOfStruct, widthOfStruct, heightOfStruct);
+                        graphics.FillRectangle(purpleBrush, i*widthOfStruct, j*heightOfStruct, widthOfStruct, heightOfStruct);
                     }
                 }
             }

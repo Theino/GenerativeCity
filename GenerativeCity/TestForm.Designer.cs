@@ -36,7 +36,8 @@
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(201, 365);
+            this.btnGenerate.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnGenerate.Location = new System.Drawing.Point(358, 731);
             this.btnGenerate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(81, 21);
@@ -52,19 +53,21 @@
             // 
             // panelDrawing
             // 
+            this.panelDrawing.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDrawing.BackColor = System.Drawing.Color.White;
-            this.panelDrawing.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelDrawing.Location = new System.Drawing.Point(0, 0);
             this.panelDrawing.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelDrawing.Name = "panelDrawing";
-            this.panelDrawing.Size = new System.Drawing.Size(471, 328);
+            this.panelDrawing.Size = new System.Drawing.Size(784, 694);
             this.panelDrawing.TabIndex = 1;
             // 
             // formTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 396);
+            this.ClientSize = new System.Drawing.Size(784, 762);
             this.Controls.Add(this.panelDrawing);
             this.Controls.Add(this.btnGenerate);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
