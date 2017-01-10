@@ -36,7 +36,8 @@ namespace GenerativeCity
 
             int randVal = cityMap.rand.Next();
             double randomChanceWithHouses = cityMap.CountPercentTypeAround(XIndex, YIndex, 1, promotionType);
-            if (randVal < Int32.MaxValue / randomChanceWithHouses)
+            double randomOddsOfPromotion = randomChanceWithHouses + RandomChancePromotion;
+            if (randVal < Int32.MaxValue * randomOddsOfPromotion)
             {
                 CityStructure newStructure = (CityStructure)Activator.CreateInstance(promotionType, parameters);
                 cityMap[XIndex, YIndex] = newStructure;
