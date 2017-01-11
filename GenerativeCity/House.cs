@@ -75,8 +75,9 @@ namespace GenerativeCity
             double randomChanceWithHouse = cityMap.CountPercentTypeAround(XIndex, YIndex, 4, typeof(House));
             double randomChanceWithCommercialBuildingFar = cityMap.CountPercentTypeAround(XIndex, YIndex, 4, typeof(CommercialBuilding));
             double randomChanceWithCommercialBuildingNear = cityMap.CountPercentTypeAround(XIndex, YIndex, 1, typeof(CommercialBuilding));
+            double randomChanceWithHighRiseFar = cityMap.CountPercentTypeAround(XIndex, YIndex, 5, typeof(HighRise));
             double randomChanceWithSurroundingBias;
-            if (randomChanceWithCommercialBuildingFar > 0.1)
+            if ((randomChanceWithCommercialBuildingFar > 0.1) )
             {
                 randomChanceWithSurroundingBias = 0;
             }
@@ -84,11 +85,15 @@ namespace GenerativeCity
             {
                 randomChanceWithSurroundingBias = 3 * randomChanceWithCommercialBuildingNear + randomChanceWithHouse;
             }
+            if (randomChanceWithHighRiseFar > 0.0001)
+            {
+                randomChanceWithSurroundingBias = 0.5;
+            }
 
-            double percentCenterBias = calculateCenterBias(xMiddle, yMiddle);
-            double randomOddsOfPromotion = (randomChanceWithSurroundingBias * PromotionMultiplierOnUpgradeType) + RandomChancePromotion;
-            randomOddsOfPromotion = randomOddsOfPromotion * percentCenterBias;
-            if (randVal < Int32.MaxValue * randomOddsOfPromotion)
+            double percentCenterBias = calculateCenterBias(xMiddle, yMiddle, 4, 1);
+            double randomOddsOfPromotionCommercial = (randomChanceWithSurroundingBias * PromotionMultiplierOnUpgradeType) + RandomChancePromotion;
+            randomOddsOfPromotionCommercial = randomOddsOfPromotionCommercial * percentCenterBias;
+            if (randVal < Int32.MaxValue * randomOddsOfPromotionCommercial)
             {
                 CityStructure newStructure = (CityStructure)Activator.CreateInstance(promotionType, parameters);
                 cityMap[XIndex, YIndex] = newStructure;

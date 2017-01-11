@@ -24,6 +24,7 @@ namespace GenerativeCity
         SolidBrush purpleBrush = new SolidBrush(Color.Purple);
         SolidBrush brownBrush = new SolidBrush(Color.Brown);
         SolidBrush greenBrush = new SolidBrush(Color.Green);
+        SolidBrush yellowBrush = new SolidBrush(Color.Yellow);
 
 
 
@@ -67,6 +68,10 @@ namespace GenerativeCity
                     if (structureType.GetType() == typeof(CommercialBuilding))
                     {
                         graphics.FillRectangle(purpleBrush, i*widthOfStruct, j*heightOfStruct, widthOfStruct, heightOfStruct);
+                    }
+                    if (structureType.GetType() == typeof(HighRise))
+                    {
+                        graphics.FillRectangle(yellowBrush, i * widthOfStruct, j * heightOfStruct, widthOfStruct, heightOfStruct);
                     }
                 }
             }

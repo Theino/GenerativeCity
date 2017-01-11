@@ -34,7 +34,7 @@ namespace GenerativeCity
         {
             get
             {
-                return typeof(CommercialBuilding);
+                return typeof(HighRise);
             }
         }
 
@@ -42,7 +42,7 @@ namespace GenerativeCity
         {
             get
             {
-                return typeof(Empty);
+                return typeof(CommercialBuilding);
             }
         }
 
@@ -73,18 +73,19 @@ namespace GenerativeCity
             int randVal = cityMap.rand.Next();
             double randomChanceWithHouse = cityMap.CountPercentTypeAround(XIndex, YIndex, 4, typeof(House));
             double randomChanceWithCommercialBuildingFar = cityMap.CountPercentTypeAround(XIndex, YIndex, 4, typeof(CommercialBuilding));
-            double randomChanceWithCommercialBuildingNear = cityMap.CountPercentTypeAround(XIndex, YIndex, 1, typeof(CommercialBuilding));
+            double randomChanceWithHighRiseNear = cityMap.CountPercentTypeAround(XIndex, YIndex, 1, typeof(HighRise));
+            double randomChanceWithEmptyFar = cityMap.CountPercentTypeAround(XIndex, YIndex, 4, typeof(Empty));
             double randomChanceWithSurroundingBias;
-            if (randomChanceWithCommercialBuildingFar > 0.1)
+            if (randomChanceWithEmptyFar < 0.001)
             {
                 randomChanceWithSurroundingBias = 0;
             }
             else
             {
-                randomChanceWithSurroundingBias = 3 * randomChanceWithCommercialBuildingNear + randomChanceWithHouse;
+                randomChanceWithSurroundingBias = 3 * randomChanceWithHighRiseNear + randomChanceWithHouse;
             }
 
-            double percentCenterBias = calculateCenterBias(xMiddle, yMiddle);
+            double percentCenterBias = calculateCenterBias(xMiddle, yMiddle, 4, 1);
             double randomOddsOfPromotion = (randomChanceWithSurroundingBias * PromotionMultiplierOnUpgradeType) + RandomChancePromotion;
             randomOddsOfPromotion = randomOddsOfPromotion * percentCenterBias;
             if (randVal < Int32.MaxValue * randomOddsOfPromotion)

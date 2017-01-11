@@ -51,11 +51,13 @@ namespace GenerativeCity
             int count = 0;
             int total = 0;
             double percent;
+            
             for (int i = xIndex - distance; i < xIndex + distance; i++)
             {
                 for (int j = yIndex - distance; j < yIndex + distance; j++)
                 {
                     bool isNotOrigin = i != xIndex || j != yIndex;
+                    
                     if (isNotOrigin)
                     {
                         if (IsSameType(i, j, t))
@@ -65,6 +67,10 @@ namespace GenerativeCity
                         total++;
                     }
                 }
+            }
+            if ((t == typeof(HighRise)) && count > 0)
+            {
+                percent = 0.1;
             }
             percent = (double)count / (double)total;
             return percent;

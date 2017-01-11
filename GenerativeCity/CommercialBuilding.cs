@@ -35,7 +35,7 @@ namespace GenerativeCity
         {
             get
             {
-                return typeof(CommercialBuilding);
+                return typeof(HighRise);
             }
         }
 
@@ -71,20 +71,21 @@ namespace GenerativeCity
             int xMiddle = cityMap.XSize / 2;
             int yMiddle = cityMap.YSize / 2;
             int randVal = cityMap.rand.Next();
-            double randomChanceWithHouse = cityMap.CountPercentTypeAround(XIndex, YIndex, 3, typeof(House));
-            double randomChanceWithCommercialBuildingFar = cityMap.CountPercentTypeAround(XIndex, YIndex, 3, typeof(CommercialBuilding));
-            double randomChanceWithCommercialBuildingNear = cityMap.CountPercentTypeAround(XIndex, YIndex, 1, typeof(CommercialBuilding));
+            double randomChanceWithHouse = cityMap.CountPercentTypeAround(XIndex, YIndex, 4, typeof(House));
+            double randomChanceWithCommercialBuildingNear = cityMap.CountPercentTypeAround(XIndex, YIndex, 2, typeof(CommercialBuilding));
+            double randomChanceWithHighRiseNear = cityMap.CountPercentTypeAround(XIndex, YIndex, 2, typeof(HighRise));
+            double randomChanceWithEmptyFar = cityMap.CountPercentTypeAround(XIndex, YIndex, 4, typeof(Empty));
             double randomChanceWithSurroundingBias;
-            if (randomChanceWithCommercialBuildingFar > 0.5)
+            if (randomChanceWithEmptyFar < 0.001)
             {
-                randomChanceWithSurroundingBias = 0;
+                randomChanceWithSurroundingBias = 100000 * randomChanceWithHighRiseNear + 100 * randomChanceWithCommercialBuildingNear;
             }
             else
             {
-                randomChanceWithSurroundingBias = 3 * randomChanceWithCommercialBuildingNear;
+                randomChanceWithSurroundingBias = 0;
             }
 
-            double percentCenterBias = calculateCenterBias(xMiddle, yMiddle);
+            double percentCenterBias = calculateCenterBias(xMiddle, yMiddle, 100, 1);
             double randomOddsOfPromotion = (randomChanceWithSurroundingBias * PromotionMultiplierOnUpgradeType) + RandomChancePromotion;
             randomOddsOfPromotion = randomOddsOfPromotion * percentCenterBias;
             if (randVal < Int32.MaxValue * randomOddsOfPromotion)

@@ -38,7 +38,7 @@
             // 
             this.btnGenerate.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnGenerate.Location = new System.Drawing.Point(358, 731);
-            this.btnGenerate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGenerate.Margin = new System.Windows.Forms.Padding(2);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(81, 21);
             this.btnGenerate.TabIndex = 0;
@@ -48,7 +48,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 1000;
+            this.timer1.Interval = 250;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // panelDrawing
@@ -58,7 +58,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDrawing.BackColor = System.Drawing.Color.White;
             this.panelDrawing.Location = new System.Drawing.Point(0, 0);
-            this.panelDrawing.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelDrawing.Margin = new System.Windows.Forms.Padding(2);
             this.panelDrawing.Name = "panelDrawing";
             this.panelDrawing.Size = new System.Drawing.Size(784, 694);
             this.panelDrawing.TabIndex = 1;
@@ -70,7 +70,7 @@
             this.ClientSize = new System.Drawing.Size(784, 762);
             this.Controls.Add(this.panelDrawing);
             this.Controls.Add(this.btnGenerate);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "formTest";
             this.Text = "Generative City Test";
             this.ResumeLayout(false);
