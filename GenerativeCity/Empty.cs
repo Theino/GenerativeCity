@@ -53,29 +53,44 @@ namespace GenerativeCity
         public override void Step(CityMap cityMap)
         {
             object[] parameters = { XIndex, YIndex };
-            int xMiddle = cityMap.XSize / 2;
-            int yMiddle = cityMap.YSize / 2;
             int randVal = cityMap.rand.Next();
-            double randomChanceWithHouse = cityMap.CountPercentTypeAround(XIndex, YIndex, 3, typeof(House));
-            double randomChanceWithCommercialBuilding = cityMap.CountPercentTypeAround(XIndex, YIndex, 3, typeof(CommercialBuilding));
-            double randomChanceWithSurroundingBias;
-            if (this.GetType() == typeof(Empty))
-            {
-                randomChanceWithSurroundingBias = 2 * (randomChanceWithHouse + randomChanceWithCommercialBuilding);
-            }
-            else
-            {
-                randomChanceWithSurroundingBias = 2 * randomChanceWithCommercialBuilding;
-            }
-
-            double percentCenterBias = calculateCenterBias(xMiddle, yMiddle, 4, 1);
-            double randomOddsOfPromotion = (randomChanceWithSurroundingBias * PromotionMultiplierOnUpgradeType) + RandomChancePromotion;
-            randomOddsOfPromotion = randomOddsOfPromotion * percentCenterBias;
-            if (randVal < Int32.MaxValue * randomOddsOfPromotion)
+            double housePromoteProbability = 1;
+            housePromoteProbability = CalculateSurroundingHouseEffectOnHousePromote(cityMap, housePromoteProbability);
+            housePromoteProbability = CalculateSurroundingCommercialEffectOnHousePromote(cityMap, housePromoteProbability);
+            housePromoteProbability = CalculateCenterEffectOnHousePromote(cityMap, housePromoteProbability);
+            if (randVal < Int32.MaxValue * housePromoteProbability)
             {
                 CityStructure newStructure = (CityStructure)Activator.CreateInstance(typeof(House), parameters);
                 cityMap[XIndex, YIndex] = newStructure;
             }
+        }
+
+        private double CalculateCenterEffectOnHousePromote(CityMap cityMap, double housePromoteProbability)
+        {
+            int xMiddle = cityMap.XSize / 2;
+            int yMiddle = cityMap.YSize / 2;
+            double contributingEffect;
+            contributingEffect = CalculateCenterBias(xMiddle, yMiddle, 4, 1);
+            if (housePromoteProbability < 0.001)
+            {
+                return contributingEffect;
+            }
+            else
+            {
+                return contributingEffect / 10.0;
+            }
+        }
+
+        private double CalculateSurroundingCommercialEffectOnHousePromote(CityMap cityMap, double housePromoteProbability)
+        {
+            double contributingEffect = cityMap.CountPercentTypeAround(XIndex, YIndex, 3, typeof(CommercialBuilding));
+            return contributingEffect * housePromoteProbability;
+        }
+
+        private double CalculateSurroundingHouseEffectOnHousePromote(CityMap cityMap, double housePromoteProbability)
+        {
+            double contributingEffect = cityMap.CountPercentTypeAround(XIndex, YIndex, 3, typeof(House));
+            return contributingEffect * housePromoteProbability;
         }
     }
 }

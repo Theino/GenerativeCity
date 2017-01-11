@@ -45,7 +45,7 @@ namespace GenerativeCity
             CenterBias = DefaultCenterBias;
         }
 
-        public double calculateCenterBias(int xMiddle, int yMiddle, double expConst, double scaleConst)
+        public double CalculateCenterBias(int xMiddle, int yMiddle, double expConst, double scaleConst)
         {
             double centerBiasX = Math.Abs(XIndex - xMiddle) * scaleConst;
             double centerBiasY = Math.Abs(YIndex - yMiddle) * scaleConst;

@@ -69,7 +69,7 @@ namespace GenerativeCity
                 randomChanceWithSurroundingBias = 3 * randomChanceWithHighRiseNear + randomChanceWithHouse;
             }
 
-            double percentCenterBias = calculateCenterBias(xMiddle, yMiddle, 4, 1);
+            double percentCenterBias = CalculateCenterBias(xMiddle, yMiddle, 4, 1);
             double randomOddsOfPromotion = (randomChanceWithSurroundingBias * PromotionMultiplierOnUpgradeType) + RandomChancePromotion;
             randomOddsOfPromotion = randomOddsOfPromotion * percentCenterBias;
             if (randVal < Int32.MaxValue * randomOddsOfPromotion)
