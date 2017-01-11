@@ -12,7 +12,7 @@ namespace GenerativeCity
         {
             get
             {
-                return 0.1;
+                return 0;
             }
         }
         public override double DefaultRandomChanceDemotion
@@ -72,16 +72,17 @@ namespace GenerativeCity
             int xMiddle = cityMap.XSize / 2;
             int yMiddle = cityMap.YSize / 2;
             int randVal = cityMap.rand.Next();
-            double randomChanceWithHouse = cityMap.CountPercentTypeAround(XIndex, YIndex, 3, typeof(House));
-            double randomChanceWithCommercialBuilding = cityMap.CountPercentTypeAround(XIndex, YIndex, 3, typeof(CommercialBuilding));
+            double randomChanceWithHouse = cityMap.CountPercentTypeAround(XIndex, YIndex, 4, typeof(House));
+            double randomChanceWithCommercialBuildingFar = cityMap.CountPercentTypeAround(XIndex, YIndex, 4, typeof(CommercialBuilding));
+            double randomChanceWithCommercialBuildingNear = cityMap.CountPercentTypeAround(XIndex, YIndex, 1, typeof(CommercialBuilding));
             double randomChanceWithSurroundingBias;
-            if (this.GetType() == typeof(Empty))
+            if (randomChanceWithCommercialBuildingFar > 0.1)
             {
-                randomChanceWithSurroundingBias = 2 * (randomChanceWithHouse + randomChanceWithCommercialBuilding);
+                randomChanceWithSurroundingBias = 0;
             }
             else
             {
-                randomChanceWithSurroundingBias = 2 * randomChanceWithCommercialBuilding;
+                randomChanceWithSurroundingBias = 3 * randomChanceWithCommercialBuildingNear + randomChanceWithHouse;
             }
 
             double percentCenterBias = calculateCenterBias(xMiddle, yMiddle);
