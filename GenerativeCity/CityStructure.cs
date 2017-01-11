@@ -51,7 +51,7 @@ namespace GenerativeCity
         {
             double centerBiasX = Math.Abs(XIndex - xMiddle) * scaleConst;
             double centerBiasY = Math.Abs(YIndex - yMiddle) * scaleConst;
-            double percentOffCenter = (centerBiasX + centerBiasY) / (xMiddle + yMiddle);
+            double percentOffCenter = (Math.Pow(centerBiasX,2) + Math.Pow(centerBiasY,2)) / (Math.Pow(xMiddle, 2) + Math.Pow(yMiddle, 2));
             double percentOnCenterExp = Math.Pow(1 - percentOffCenter, expConst);
             return percentOnCenterExp;
         }
