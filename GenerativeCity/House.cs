@@ -31,22 +31,6 @@ namespace GenerativeCity
             }
         }
 
-        public override Type promotionType
-        {
-            get
-            {
-                return typeof(CommercialBuilding);
-            }
-        }
-
-        public override Type demotionType
-        {
-            get
-            {
-                return typeof(Empty);
-            }
-        }
-
         public override double DefaultCenterBias
         {
             get
@@ -95,7 +79,7 @@ namespace GenerativeCity
             randomOddsOfPromotionCommercial = randomOddsOfPromotionCommercial * percentCenterBias;
             if (randVal < Int32.MaxValue * randomOddsOfPromotionCommercial)
             {
-                CityStructure newStructure = (CityStructure)Activator.CreateInstance(promotionType, parameters);
+                CityStructure newStructure = (CityStructure)Activator.CreateInstance(typeof(CommercialBuilding), parameters);
                 cityMap[XIndex, YIndex] = newStructure;
             }
         }

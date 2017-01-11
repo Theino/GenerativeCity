@@ -21,8 +21,6 @@ namespace GenerativeCity
         public abstract double DefaultPromotionMultiplierOnUpgradeType { get; }
         public abstract double DefaultCenterBias { get; }
 
-        public abstract Type promotionType { get; }
-        public abstract Type demotionType { get; }
 
         public abstract void Step(CityMap cityMap);
 
