@@ -51,6 +51,7 @@
     <Compile Include="CityStructure.cs" />
     <Compile Include="CommercialBuilding.cs" />
     <Compile Include="Empty.cs" />
+    <Compile Include="HighRise.cs" />
     <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
