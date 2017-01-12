@@ -38,7 +38,7 @@ namespace GenerativeCity
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            timer1.Enabled = true;
+            stepTimer.Enabled = true;
         }
 
         private void timer1_Tick(object sender, EventArgs e)

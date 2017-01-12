@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.btnGenerate = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.stepTimer = new System.Windows.Forms.Timer(this.components);
             this.panelDrawing = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
@@ -46,10 +46,10 @@
             this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
-            // timer1
+            // stepTimer
             // 
-            this.timer1.Interval = 250;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.stepTimer.Interval = 250;
+            this.stepTimer.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // panelDrawing
             // 
@@ -80,7 +80,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnGenerate;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer stepTimer;
         private System.Windows.Forms.Panel panelDrawing;
     }
 }
