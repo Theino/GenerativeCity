@@ -10,26 +10,26 @@
   <Class Name="GenerativeCity.CommercialBuilding">
     <Position X="1" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAAAAAAAAAAAEAAAFAAAAAAAAAAAAAIAAAAEAAAAE=</HashCode>
+      <HashCode>AACAAAAAAAAAAAEAAAEAAAAAAAAAAAAAIAAAAAAAAAE=</HashCode>
       <FileName>CommercialBuilding.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GenerativeCity.House">
     <Position X="2.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAAAAAAAAAAAEAAAFAAAAAAAAAAAAAIAAAAEAAAAE=</HashCode>
+      <HashCode>AACAAAAAAAAAAAEAAAEAAAAAAAAAAAAAIAAAAAAAAAE=</HashCode>
       <FileName>House.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GenerativeCity.Empty">
     <Position X="4.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAAAAAAAAAAAEAAAFAAAAAAAAAAAAAIAAAAEAAAAE=</HashCode>
+      <HashCode>AACAAAAAAAAAAAEAAAEAAAAAAAAQACAAIAAAAAAAAAE=</HashCode>
       <FileName>Empty.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GenerativeCity.CityMap">
-    <Position X="6.75" Y="2.25" Width="1.5" />
+    <Position X="9.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAQBIAAAAAAAAAgCAAAAAAAAAAAAAEIAAAABAAAAAA=</HashCode>
       <FileName>CityMap.cs</FileName>
@@ -45,14 +45,14 @@
   <Class Name="GenerativeCity.CityStructure" Collapsed="true">
     <Position X="2.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAAAAAAAAAACEIAAFAxBAAAAAAAAAAIAAACEAAAAE=</HashCode>
+      <HashCode>AACAAAAAAAAAACEIAAEAhBAAAEAAAAAAIAAACAAAAAE=</HashCode>
       <FileName>CityStructure.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GenerativeCity.HighRise">
-    <Position X="6.25" Y="5.5" Width="1.5" />
+    <Position X="6.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AACAAAAAAAAAAAEAAAEAAAAAAAAAAAAAIAAAAAAAAAE=</HashCode>
       <FileName>HighRise.cs</FileName>
     </TypeIdentifier>
   </Class>

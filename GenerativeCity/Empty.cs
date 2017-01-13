@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace GenerativeCity
 {
@@ -55,8 +54,7 @@ namespace GenerativeCity
             object[] parameters = { XIndex, YIndex };
             int randVal = cityMap.rand.Next();
             double housePromoteProbability = 1;
-            housePromoteProbability = CalculateSurroundingHouseEffectOnHousePromote(cityMap, housePromoteProbability);
-            housePromoteProbability = CalculateSurroundingCommercialEffectOnHousePromote(cityMap, housePromoteProbability);
+            housePromoteProbability = CalculateSurroundingEffectOnHousePromote(cityMap, housePromoteProbability);
             housePromoteProbability = CalculateCenterEffectOnHousePromote(cityMap, housePromoteProbability);
             if (randVal < Int32.MaxValue * housePromoteProbability)
             {
@@ -81,15 +79,9 @@ namespace GenerativeCity
             }
         }
 
-        private double CalculateSurroundingCommercialEffectOnHousePromote(CityMap cityMap, double housePromoteProbability)
+        private double CalculateSurroundingEffectOnHousePromote(CityMap cityMap, double housePromoteProbability)
         {
-            double contributingEffect = cityMap.CountPercentTypeAround(XIndex, YIndex, 3, typeof(CommercialBuilding));
-            return contributingEffect * housePromoteProbability;
-        }
-
-        private double CalculateSurroundingHouseEffectOnHousePromote(CityMap cityMap, double housePromoteProbability)
-        {
-            double contributingEffect = cityMap.CountPercentTypeAround(XIndex, YIndex, 3, typeof(House));
+            double contributingEffect = cityMap.CountPercentTypeAround(XIndex, YIndex, 3, typeof(CommercialBuilding)) + cityMap.CountPercentTypeAround(XIndex, YIndex, 3, typeof(House));
             return contributingEffect * housePromoteProbability;
         }
     }
