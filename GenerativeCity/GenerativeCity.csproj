@@ -46,20 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="City.cs" />
-    <Compile Include="CityMap.cs" />
-    <Compile Include="CityStructure.cs" />
-    <Compile Include="CommercialBuilding.cs" />
-    <Compile Include="Empty.cs" />
-    <Compile Include="HighRise.cs" />
+    <Compile Include="BackgroundCode\City.cs" />
+    <Compile Include="BackgroundCode\CityMap.cs" />
+    <Compile Include="BackgroundCode\CityStructure.cs" />
+    <Compile Include="BackgroundCode\CommercialBuilding.cs" />
+    <Compile Include="BackgroundCode\Empty.cs" />
+    <Compile Include="BackgroundCode\HighRise.cs" />
     <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TestForm.Designer.cs">
       <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="House.cs" />
-    <Compile Include="Point.cs" />
+    <Compile Include="BackgroundCode\House.cs" />
+    <Compile Include="BackgroundCode\Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="TestForm.resx">
@@ -88,9 +88,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BackgroundCode\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

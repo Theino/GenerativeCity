@@ -4,56 +4,56 @@
     <Position X="4.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
-      <FileName>City.cs</FileName>
+      <FileName>BackgroundCode\City.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GenerativeCity.CommercialBuilding">
     <Position X="1" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AACAAAAAAAAAAAEAAAEAAAAAAAAAAAAAIAAAAAAAAAE=</HashCode>
-      <FileName>CommercialBuilding.cs</FileName>
+      <FileName>BackgroundCode\CommercialBuilding.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GenerativeCity.House">
     <Position X="2.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AACAAAAAAAAAAAEAAAEAAAAAAAAAAAAAIAAAAAAAAAE=</HashCode>
-      <FileName>House.cs</FileName>
+      <FileName>BackgroundCode\House.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GenerativeCity.Empty">
     <Position X="4.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AACAAAAAAAAAAAEAAAEAAAAAAAAQACAAIAAAAAAAAAE=</HashCode>
-      <FileName>Empty.cs</FileName>
+      <FileName>BackgroundCode\Empty.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GenerativeCity.CityMap">
     <Position X="9.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAQBIAAAAAAAAAgCAAAAAAAAAAAAAEIAAAABAAAAAA=</HashCode>
-      <FileName>CityMap.cs</FileName>
+      <FileName>BackgroundCode\CityMap.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GenerativeCity.Point">
     <Position X="0.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
-      <FileName>Point.cs</FileName>
+      <FileName>BackgroundCode\Point.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GenerativeCity.CityStructure" Collapsed="true">
     <Position X="2.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AACAAAAAAAAAACEIAAEAhBAAAEAAAAAAIAAACAAAAAE=</HashCode>
-      <FileName>CityStructure.cs</FileName>
+      <FileName>BackgroundCode\CityStructure.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GenerativeCity.HighRise">
     <Position X="6.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AACAAAAAAAAAAAEAAAEAAAAAAAAAAAAAIAAAAAAAAAE=</HashCode>
-      <FileName>HighRise.cs</FileName>
+      <FileName>BackgroundCode\HighRise.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
